@@ -1,6 +1,8 @@
 # Styleguide
 
-Sample styleguide implementation in Swift.
+Sample styleguide implementation in Swift. 
+
+For more: https://medium.com/@gokselkoksal/styling-with-swift-377d4afdb502
 
 ## Font & Color
 
