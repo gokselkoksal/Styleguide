@@ -10,7 +10,6 @@ import UIKit
 // MARK: Structs
 
 struct TextStyle {
-    
     let font: UIFont
     let color: UIColor
 }
@@ -20,13 +19,11 @@ struct ViewStyle {
     struct LayerStyle {
         
         struct BorderStyle {
-            
             let color: UIColor
             let width: CGFloat
         }
         
         struct ShadowStyle {
-            
             let color: UIColor
             let radius: CGFloat
             let offset: CGSize
@@ -66,12 +63,10 @@ func +(style: TextStyle, color: UIColor) -> TextStyle {
 // MARK: Helper protocols
 
 protocol TextStyling {
-    
     func style(style: TextStyle)
 }
 
 protocol ViewStyling {
-    
     func style(style: ViewStyle)
 }
 
@@ -80,35 +75,24 @@ protocol ViewStyling {
 extension UIView: ViewStyling {
     
     func style(style: ViewStyle) {
-        
         if let backgroundColor = style.backgroundColor {
             self.backgroundColor = backgroundColor
         }
-        
         if let tintColor = style.tintColor {
             self.tintColor = tintColor
         }
-        
         if let layerStyle = style.layerStyle {
-            
             if let cornerRadius = layerStyle.cornerRadius {
-                
                 self.layer.cornerRadius = cornerRadius
             }
-            
-            if let masksToBounds = layerStyle.masksToBounds {
-                
+            if let masksToBounds = layerStyle.masksToBounds {   
                 self.layer.masksToBounds = masksToBounds
             }
-            
             if let borderStyle = layerStyle.borderStyle {
-                
                 self.layer.borderColor = borderStyle.color.CGColor
                 self.layer.borderWidth = borderStyle.width
             }
-            
             if let shadowStyle = layerStyle.shadowStyle {
-                
                 self.layer.shadowColor = shadowStyle.color.CGColor
                 self.layer.shadowOffset = shadowStyle.offset
                 self.layer.shadowRadius = shadowStyle.radius
