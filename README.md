@@ -7,14 +7,12 @@ For more: https://medium.com/@gokselkoksal/styling-with-swift-377d4afdb502
 ## Font & Color
 
 ```swift
-struct Color {
-    
+enum Color {
     static let black = UIColor.blackColor()
     static let tint = UIColor.greenColor()
 }
 
-struct Alpha {
-    
+enum Alpha {
     static let none     = CGFloat(0.0)
     static let veryLow  = CGFloat(0.05)
     static let low      = CGFloat(0.30)
@@ -26,7 +24,6 @@ struct Alpha {
 }
 
 struct Font {
-    
     static func withSize(size: CGFloat, weight: CGFloat) -> UIFont {
         return UIFont.systemFontOfSize(size, weight: weight)
     }
@@ -47,7 +44,6 @@ let colorWithAlpha = Color.red * Alpha.low
 
 ```swift
 struct TextStyle {
-    
     let font: UIFont
     let color: UIColor
 }
@@ -79,13 +75,11 @@ struct ViewStyle {
     struct LayerStyle {
         
         struct BorderStyle {
-            
             let color: UIColor
             let width: CGFloat
         }
         
         struct ShadowStyle {
-            
             let color: UIColor
             let radius: CGFloat
             let offset: CGSize
@@ -117,12 +111,10 @@ To use these style structs with your view objects, you just need to conform to `
 
 ```swift
 protocol TextStyling {
-    
     func style(style: TextStyle)
 }
 
 protocol ViewStyling {
-    
     func style(style: ViewStyle)
 }
 ```
