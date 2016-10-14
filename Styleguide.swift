@@ -7,14 +7,12 @@
 
 import UIKit
 
-struct Color {
-    
+enum Color {
     static let black = UIColor.blackColor()
     static let tint = UIColor.greenColor()
 }
 
-struct Alpha {
-    
+enum Alpha {
     static let none     = CGFloat(0.0)
     static let veryLow  = CGFloat(0.05)
     static let low      = CGFloat(0.30)
@@ -25,8 +23,7 @@ struct Alpha {
     static let full     = CGFloat(1.0)
 }
 
-struct Font {
-    
+enum Font {
     static func withSize(size: CGFloat, weight: CGFloat) -> UIFont {
         return UIFont.systemFontOfSize(size, weight: weight)
     }
@@ -47,7 +44,7 @@ extension TextStyle {
 
 extension TextStyle {
     
-    struct Button {
+    enum Button {
         static let action = TextStyle(
             font: Font.withSize(16.0, weight: UIFontWeightMedium),
             color: Color.tint
