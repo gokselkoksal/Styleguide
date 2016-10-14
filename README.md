@@ -23,7 +23,7 @@ enum Alpha {
     static let full     = CGFloat(1.0)
 }
 
-struct Font {
+enum Font {
     static func withSize(size: CGFloat, weight: CGFloat) -> UIFont {
         return UIFont.systemFontOfSize(size, weight: weight)
     }
