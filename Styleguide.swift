@@ -8,8 +8,8 @@
 import UIKit
 
 enum Color {
-    static let black = UIColor.blackColor()
-    static let tint = UIColor.greenColor()
+    static let black = UIColor.black
+    static let tint = UIColor.green
 }
 
 enum Alpha {
@@ -24,8 +24,8 @@ enum Alpha {
 }
 
 enum Font {
-    static func withSize(size: CGFloat, weight: CGFloat) -> UIFont {
-        return UIFont.systemFontOfSize(size, weight: weight)
+    static func withSize(_ size: CGFloat, weight: CGFloat) -> UIFont {
+        return UIFont.systemFont(ofSize: size, weight: weight)
     }
 }
 

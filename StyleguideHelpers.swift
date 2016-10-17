@@ -43,13 +43,13 @@ struct ViewStyle {
 
 // MARK: Helper functions
 
-func color(red red: CGFloat, green: CGFloat, blue: CGFloat, alpha: CGFloat = 1.0) -> UIColor {
+func color(red: CGFloat, green: CGFloat, blue: CGFloat, alpha: CGFloat = 1.0) -> UIColor {
     let divider: CGFloat = 255.0
     return UIColor(red: red/divider, green: green/divider, blue: blue/divider, alpha: alpha)
 }
 
 func *(color: UIColor, alpha: CGFloat) -> UIColor {
-    return color.colorWithAlphaComponent(CGFloat(alpha))
+    return color.withAlphaComponent(CGFloat(alpha))
 }
 
 func *(style: TextStyle, alpha: CGFloat) -> TextStyle {
@@ -89,11 +89,11 @@ extension UIView: ViewStyling {
                 self.layer.masksToBounds = masksToBounds
             }
             if let borderStyle = layerStyle.borderStyle {
-                self.layer.borderColor = borderStyle.color.CGColor
+                self.layer.borderColor = borderStyle.color.cgColor
                 self.layer.borderWidth = borderStyle.width
             }
             if let shadowStyle = layerStyle.shadowStyle {
-                self.layer.shadowColor = shadowStyle.color.CGColor
+                self.layer.shadowColor = shadowStyle.color.cgColor
                 self.layer.shadowOffset = shadowStyle.offset
                 self.layer.shadowRadius = shadowStyle.radius
                 self.layer.shadowOpacity = shadowStyle.opacity
@@ -114,7 +114,7 @@ extension UIButton: TextStyling {
     
     func style(style: TextStyle) {
         titleLabel?.font = style.font
-        setTitleColor(style.color, forState: .Normal)
+        setTitleColor(style.color, for: .normal)
     }
 }
 
